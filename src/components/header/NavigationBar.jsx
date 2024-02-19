@@ -13,12 +13,6 @@ export default function NavigationBar() {
             Book List
           </Link>
           <Link
-            href="/edit-book"
-            className=" py-3 text-lg font-medium hover:text-orange-600 transition-all duration-300"
-          >
-            Edit Book
-          </Link>
-          <Link
             href="/add-book"
             className=" p-3 text-lg font-medium hover:text-orange-600 transition-all duration-300"
           >
