@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import bookReducer from "./features/books/bookSlice";
 
-export default makeStore = () => {
+export const makeStore = () => {
   return configureStore({
     reducer: {
-      books: bookReducer,
+      bookReducer: bookReducer,
     },
   });
 };
