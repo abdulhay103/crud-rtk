@@ -1,10 +1,15 @@
 "use client";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
+import { deleteBook } from "./bookSlice";
 
 export default function ViewBooks() {
   const books = useSelector((state) => state.bookReducer.books);
   const dispatch = useDispatch();
+
+  const deleteHandler = (id) => {
+    dispatch(deleteBook(id));
+  };
 
   return (
     <div className=" container mx-auto py-10">
@@ -24,7 +29,7 @@ export default function ViewBooks() {
           books.map((book) => {
             const { id, title, author } = book;
             return (
-              <div className=" w-3/4 mx-auto flex ">
+              <div key={id} className=" w-3/4 mx-auto flex ">
                 <div className="border w-full text-center border-gray-900 py-2 bg-orange-100">
                   <p>{title}</p>
                 </div>
@@ -35,7 +40,14 @@ export default function ViewBooks() {
                   <Link href={`/edit-book/${id}`} className=" text-blue-500">
                     Update
                   </Link>
-                  <button className=" text-red-500">Delete</button>
+                  <button
+                    onClick={() => {
+                      deleteHandler(id);
+                    }}
+                    className=" text-red-500"
+                  >
+                    Delete
+                  </button>
                 </div>
               </div>
             );
