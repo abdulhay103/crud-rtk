@@ -23,8 +23,18 @@ export const bookSlices = createSlice({
       const id = action.payload;
       state.books = state.books.filter((book) => book.id !== id);
     },
+    updateBook: (state, action) => {
+      const { id, title, author } = action.payload;
+
+      const isBookexist = state.books.filter((book) => book.id == id);
+
+      if (isBookexist) {
+        isBookexist[0].title = title;
+        isBookexist[0].author = author;
+      }
+    },
   },
 });
 
-export const { readBook, deleteBook, addBook } = bookSlices.actions;
+export const { readBook, deleteBook, addBook, updateBook } = bookSlices.actions;
 export default bookSlices.reducer;
