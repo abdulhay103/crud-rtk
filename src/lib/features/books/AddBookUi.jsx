@@ -26,7 +26,7 @@ export default function AddBookUi() {
   return (
     <div className=" container mx-auto">
       <div className="w-2/5 p-6 mx-auto border-2 border-slate-500 my-10 rounded-3xl shadow-2xl shadow-yellow-300">
-        <h1 className=" text-center text-xl font-bold">Add a new book</h1>
+        <h1 className=" text-center text-xl font-bold">Add a new book new-1</h1>
         <form action="" className=" p-6 " onSubmit={onSubmitHandler}>
           <div className=" py-2">
             <label htmlFor="title">Book Title</label>
